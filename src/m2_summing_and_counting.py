@@ -7,8 +7,8 @@ A subsequent module lets you practice the ACCUMULATOR pattern in another classic
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Colleen N Fulton.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 # ----------------------------------------------------------------------
@@ -21,6 +21,9 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #        -- IN the loop?
 #        -- AFTER the loop?
 # ----------------------------------------------------------------------
+import math
+
+
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_more_cosines()
@@ -57,7 +60,19 @@ def run_test_sum_more_cosines():
     print('--------------------------------------------------')
 
     # Test 1:
-    expected = 0.13416  # This is APPROXIMATELY the correct answer.
+    expected = 0.13416
+    answer = sum_more_cosines(0, 3)
+    print('Test 1 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 2:
+    expected = 0.02082
+    answer = sum_more_cosines(-4, 1)
+    print('Test 1 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 0.13416
     answer = sum_more_cosines(0, 3)
     print('Test 1 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
@@ -94,6 +109,11 @@ def sum_more_cosines(m, n):
     #   Just   range(blah)   where blah is a single variable.
     #   Reason: To ensure that you get more practice using variables.
     # ------------------------------------------------------------------
+    total = 0
+    for k in range(n):
+        value = m+n
+        total = total + (math.cos(value))
+    return total
 
 
 def run_test_count_sines_from():
